@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TODO LIST</title>
+    <!--Import styles-->
+    <link rel="stylesheet" href="./assets/styles.css">
+    </script>
+    <!--Import Vue CDN-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">Todo</a>
+            <a href="#">Done</a>
+            <a href="#">All</a>
+        </div>
+
+        <div class="task">
+            <table>
+                <tr>
+                    <td v-for="(x, index) in Lists">
+                        <div v-if="!Lists[index].done">
+                            {{x.name}} - {{x.priority}}
+                            <br>
+                            {{x.description}}
+                            <br>
+                            <button type="button" @click="taskDone(index)">Done</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
