@@ -13,15 +13,35 @@
 
 <body>
     <div id="app">
+        <div class="heading">
+            <h1>TODO maker</h1>
+        </div>
         <div class="nav-bar">
             <a href="#">Home</a>
             <a href="#">Todo</a>
             <a href="#">Done</a>
             <a href="#">All</a>
         </div>
-
+        <button type="button" @click="fillTable(Lists);">Inserer les données</button>
+        
         <div class="task">
-            <table>
+            <div class="outer-wrapper">
+                <div class="table-wrapper">
+                    <table id = heritageTable>
+                        <thead>
+                            <th col-index=1>name</th>
+                            <th col-index=2>priority</th>
+                            <th col-index=3>description</th>
+                            <th col-index=4>Bouton</th>
+                            <!-- Les colonnes sont ici -->
+                        </thead>
+                        <tbody>
+                            <!-- Les données seront ici -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <table>
                 <tr>
                     <td v-for="(x, index) in Lists">
                         <div v-if="!Lists[index].done">
@@ -33,7 +53,7 @@
                         </div>
                     </td>
                 </tr>
-            </table>
+            </table> -->
         </div>
 
     </div>
