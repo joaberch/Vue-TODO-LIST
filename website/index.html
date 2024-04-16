@@ -9,6 +9,7 @@
     </script>
     <!--Import Vue CDN-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
 </head>
 
 <body>
@@ -19,27 +20,20 @@
             <a href="#">Done</a>
             <a href="#">All</a>
         </div>
-
-        <div class="task">
-            <table>
-                <tr>
-                    <td v-for="(x, index) in Lists">
-                        <div v-if="!Lists[index].done">
-                            {{x.name}} - {{x.priority}}
-                            <br>
-                            {{x.description}}
-                            <br>
-                            <button type="button" @click="taskDone(index)">Done</button>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <task-display></task-display>
 
     </div>
 
     <!-- Import App -->
     <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/task.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
 </body>
 
 </html>
